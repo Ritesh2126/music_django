@@ -1,0 +1,95 @@
+<style type='text/css'>
+ .root{
+      display: flex;
+      align-items: center;
+     justify-content: center;
+ }
+ .subdiv{
+     width: 1200px;
+     height: auto;
+     border: 0.5px solid #bdc3c7;
+     padding: 20px;
+     margin-top: 80px;
+     border-radius: 10px;
+     background-color: #ecf0f1;
+
+   }
+ </style>
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Songs</title>
+</head>
+<body>
+
+<div class="root">
+
+    <div class="subdiv">
+    <h4>List of Songs</h4>
+<table class="table">
+
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+
+      <th scope="col">category id</th>
+      <th scope="col">subcategory id</th>
+      <th scope="col">title</th>
+      <th scope="col">releaseyear</th>
+      <th scope="col">lyrics</th>
+      <th scope="col">status</th>
+      <th scope="col">type</th>
+      <th scope="col">singer</th>
+      <th scope="col">director</th>
+      <th scope="col">company</th>
+      <th scope="col">poster</th>
+
+
+      <th scope="col">Edit</th>
+
+
+    </tr>
+  </thead>
+
+<tbody>
+
+   {%  for row in rows %}
+      <tr>
+      <th scope="row"> {{ row.0 }}</th>
+      <td>{{ row.1}}<br>{{row.12}}</td>
+      <td>{{row.2}}</td>
+      <td>{{ row.3}}</td>
+      <td>{{ row.4}}</td>
+
+       <td> {{ row.5}}</td>
+      <td>{{ row.6}}</td>
+      <td>{{ row.7}}</td>
+      <td>{{ row.8}}</td>
+      <td>{{ row.9}}</td>
+      <td>{{ row.10}}</td>
+
+      <td><img src="/static/{{ row.11}}" class="rounded mx-auto d-block" width="50" height="50"></td>
+      <td><a href="/songsdisplaybyid?sgcid={{ row.0 }}">Edit/Delete</a></td>
+      </tr>
+
+
+   {% endfor %}
+</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <title>MusicVid </title>
+	<meta charset="UTF-8">
+	<meta name="description" content="SolMusic HTML Template">
+	<meta name="keywords" content="music, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Favicon -->
+	<link href="/static/soulmusic/img/favicon.ico" rel="shortcut icon"/>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i&amp;display=swap" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="/static/soulmusic/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="/static/soulmusic/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="/static/soulmusic/css/owl.carousel.min.css"/>
+	<link rel="stylesheet" href="/static/soulmusic/css/slicknav.min.css"/>
+
+	<!-- Main Stylesheets -->
+	<link rel="stylesheet" href="/static/soulmusic/css/style.css"/>
+
+
+	<!--[if lt IE 9]>
+		<script src="/static/soulmusic/https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="/static/soulmusic/https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<br>
+<br>
+<center><h1>Playlists</h1></center>
+<br>
+<br>
+
+
+
+			<div class="clearfix"></div>
+			<div class="row playlist-area">
+
+				{%for row in srows%}
+				<div class="mix col-lg-3 col-md-4 col-sm-6 song{{row.1}}">
+					<div class="playlist-item">
+
+						<img src="/static/{{row.10}}"  style="height: 200px" alt="">
+						<h5>Name:-{{row.2}}</h5>
+							<h5>Description:-{{row.3}}</h5>
+					
+
+					</div>
+
+					<center><a href="/songsdisplaybyid?sgcid={{ row.0 }}">Edit/Delete</a></center>
+					<br>
+				</div>
+				{%endfor%}
+
+			</div>
+		</div>
+	</section>
+	<!-- Playlist section end -->
+</body>
+</html>
